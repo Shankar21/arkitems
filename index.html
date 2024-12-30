@@ -140,7 +140,7 @@
             display: flex;
         }
         .el_other_material__name, .el_other_material__val{
-            width: 200px;
+            width: 250px;
             color: #7c4dff;
             font-size: 18px;
         }
@@ -298,17 +298,36 @@
             <div class = "bl_column__item">
                 <div class="input-group">
                     <label for="qty" class = "el__title">Количество предметов:</label>
-                    <input type="number" id="qty" value="1">
+                    <input type="number" oninput="this.value = this.value.replace(/[^\d]/g, '')" id="qty" value="1">
                 </div>
                 <div class="input-group">
                     <label for="armor" class = "el__title">Броня:</label>
-                    <input type="number" id="armor" value="0">
+                    <input type="number" oninput="this.value = this.value.replace(/[^\d]/g, '')" id="armor" value="0">
                 </div>
                 <div class="input-group">
                     <label for="dmg" class = "el__title">Урон:</label>
-                    <input type="number" id="dmg" value="0">
+                    <input type="number" oninput="this.value = this.value.replace(/[^\d]/g, '')" id="dmg" value="0">
+                </div>
+                <input type="hidden" id="cluster" value="5" disabled>
+            </div>
+            <div class = "bl_column__item">
+                 <div class="input-group">
+                    <label for="strength" class = "el__title">Максимальная прочность:</label>
+                    <input type="number" oninput="this.value = this.value.replace(/[^\d]/g, '')" id="strength" value="0">
                 </div>
                 <div class="input-group">
+                    <label for="freez" class = "el__title">Сопротивление холоду:</label>
+                    <input type="number" oninput="this.value = this.value.replace(/[^\d]/g, '')" id="freez" value="0">
+                </div>
+                <div class="input-group">
+                    <label for="fire" class = "el__title">Сопротивление жаре:</label>
+                    <input type="number" oninput="this.value = this.value.replace(/[^\d]/g, '')" id="fire" value="0">
+                </div>
+            </div>
+        </div>
+         <div class = "bl_column__containder">
+            <div class = "bl_column__item">
+                 <div class="input-group">
                     <div class="input-group">
                     <label class = "el__title">Чертеж <span class = "el_reset__radio" onclick="return resetRadio('draft');">✘</span></label>
                         <div class="checkbox-group">
@@ -325,21 +344,8 @@
                         </div>
                     </div>
                 </div>
-                <input type="hidden" id="cluster" value="5" disabled>
             </div>
             <div class = "bl_column__item">
-                 <div class="input-group">
-                    <label for="strength" class = "el__title">Максимальная прочность:</label>
-                    <input type="number" id="strength" value="0">
-                </div>
-                <div class="input-group">
-                    <label for="freez" class = "el__title">Сопротивление холоду:</label>
-                    <input type="number" id="freez" value="0">
-                </div>
-                <div class="input-group">
-                    <label for="fire" class = "el__title">Сопротивление жаре:</label>
-                    <input type="number" id="fire" value="0">
-                </div>
                 <div class="input-group bl_qty_draft">
                     <label for="lvl" class = "el__title">Количество попыток ограниченного крафта</label>
                     <select id="qty_draft">
@@ -429,6 +435,6 @@
             <h3>Итоговое значение в других ресурсах:</h3>
         </div>
     </div>
-    <script defer="" src="script.js?v=1.0.0"></script>
+    <script defer="" src="script.js?v=1.0.2"></script>
 </body>
 </html>
